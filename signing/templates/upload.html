@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Загрузить и подписать документ</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="file">Выберите документ (Word или PDF):</label>
+    <input type="file" name="file" accept=".doc,.docx,.pdf" required>
+    <br><br>
+    <input type="submit" value="Загрузить и подписать">
+  </form>
+{% endblock %}
